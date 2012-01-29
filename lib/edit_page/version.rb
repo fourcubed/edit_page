@@ -1,0 +1,3 @@
+module EditPage
+  VERSION = "0.0.1"
+end
