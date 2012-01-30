@@ -8,7 +8,6 @@ gemspec
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 gem "mysql2"
-gem 'tinymce-rails'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
