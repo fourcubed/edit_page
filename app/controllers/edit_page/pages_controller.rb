@@ -5,13 +5,12 @@ module EditPage
     end
   
     def edit
+      @page = Page.find(params[:id])
     end
     
     def show
+      @page = Page.find(params[:id])
     end
     
-    def destroy
-    end
-  
   end
 end

@@ -1,0 +1,5 @@
+<h1><%= @page.title %></h1><br />
+
+<p><%= @page.content.html_safe %></p><br />
+
+<p><%= link_to "edit this page", url_for(:controller => 'edit_page/pages', :action => 'edit', :id => @page.id) %></p>
