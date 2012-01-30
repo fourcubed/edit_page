@@ -7,10 +7,10 @@ require "edit_page/version"
 Gem::Specification.new do |s|
   s.name        = "edit_page"
   s.version     = EditPage::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of EditPage."
+  s.authors     = ["Dan Olson"]
+  s.email       = ["dolson@fourcubed.com"]
+  s.homepage    = "https://github.com/DanOlson/edit_page"
+  s.summary     = "A very basic CMS for rails."
   s.description = "TODO: Description of EditPage."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.1.3"
   # s.add_dependency "jquery-rails"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "mysql2"
 end
