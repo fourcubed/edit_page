@@ -1,3 +1,15 @@
-<h1><%= @page.title %></h1><br />
-<p><%= @page.content %></p>
+<script type="text/javascript">
+  $(function() {
+    $('textarea').tinymce({
+      theme: 'advanced'
+    });
+  });
+</script>
 
+<%= form_for @page, :url => url_for(:controller => 'edit_page/pages', :action => 'create') do |f| %>
+  <p><%= f.label :title, 'Page Title' %><br />
+  <%= f.text_field :title %></p>
+  <p><%= f.label :content, 'Page Content' %><br />
+  <%= f.text_area :content, :rows => 40, :cols => 120 %></p>
+  <%= f.submit %>
+<% end %>
