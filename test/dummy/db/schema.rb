@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129024029) do
+ActiveRecord::Schema.define(:version => 20120201161857) do
 
   create_table "edit_page_pages", :force => true do |t|
     t.string   "title"
