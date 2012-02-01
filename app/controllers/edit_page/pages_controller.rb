@@ -4,14 +4,14 @@ module EditPage
       @pages = Page.where(:active => true)
     end
     
+    def new
+      @page = Page.new(params[:page])
+    end
+    
     def create
       @page = Page.new(params[:page])
-      @old_page = Page.find(params[:page][:id])
       if @page.save
-        @old_page.active = false
-        @old_page.save!
-        @page.activate!
-        redirect_to url_for(:controller => 'edit_page/pages', :action => 'show', :id => @page.id)
+        redirect_to @page
       else
         render :action => :edit
       end
@@ -25,5 +25,21 @@ module EditPage
       @page = Page.find(params[:id])
     end
     
+    def update
+      @page = Page.find(params[:id])
+      if @page.update_attributes(params[:page])
+        redirect_to @page
+      else
+        render :action => :edit
+      end
+    end
+    
+    def destroy
+      @page = Page.find(params[:id])
+      @page.active = false
+      @page.save!
+      redirect_to pages_path
+    end
+
   end
 end

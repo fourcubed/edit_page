@@ -6,7 +6,7 @@
   });
 </script>
 
-<%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id)) do |f| %>
+<%= form_for @page, :url => url_for(:controller => 'edit_page/pages', :action => 'create') do |f| %>
   <p><%= f.label :title, 'Page Title' %><br />
   <%= f.text_field :title %></p>
   <p><%= f.label :content, 'Page Content' %><br />
@@ -14,4 +14,4 @@
   <%= f.submit %>
 <% end %>
 
-<p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
+<p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'index') %></p>
