@@ -115,3 +115,4 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rspec-rails (~> 2.6)
+  tinymce-rails
