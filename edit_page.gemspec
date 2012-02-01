@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["dolson@fourcubed.com"]
   s.homepage    = "https://github.com/DanOlson/edit_page"
   s.summary     = "A very basic CMS for rails."
-  s.description = "TODO: Description of EditPage."
+  s.description = "EditPage is a very basic CMS for Rails. It does not handle authentication. It simply provides a CRUD interface for managing editable pages."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]

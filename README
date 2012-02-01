@@ -5,10 +5,27 @@ mount EditPage::Engine => "/edit_page"
 You may, of course, change '/edit_page' to a route of your choice. For example:
 mount EditPage::Engine => "/my_pages"
 
+You'll need to create this file structure in your app: /lib/edit_page/pages
+and place any pages you'd like to be editable in that directory.
+For example /lib/edit_page/pages/about.html where 'about.html' is a page you'd like to be editable
 
-You'll also need to copy edit_page's migrations like this:
+Next, you'll need to copy edit_page's migrations like this:
 rake edit_page:install:migrations
 
 Then you'll be able to run:
 rake db:migrate
-to run edit_page's migrations.
+to run edit_page's migrations, which will handle importing your editable page content.
+
+In your app's pages controller, something like this:
+
+class PagesController < ApplicationController
+  def show
+    @page = EditPage::Page.find_by_title(params[:title])
+  end
+end
+
+And in your view:
+<%= @page.content %>
+
+And, of course, routes:
+match 'pages/:title' => 'pages#show'
