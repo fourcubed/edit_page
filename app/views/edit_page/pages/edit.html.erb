@@ -13,3 +13,5 @@
   <%= f.text_area :content, :rows => 40, :cols => 120 %></p>
   <%= f.submit %>
 <% end %>
+
+<p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
