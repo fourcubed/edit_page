@@ -15,10 +15,18 @@ module EditPage
       else
         render :action => :edit
       end
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   
     def edit
       @page = Page.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
     
     def show
@@ -31,6 +39,10 @@ module EditPage
         redirect_to @page
       else
         render :action => :edit
+      end
+      respond_to do |format|
+        format.html
+        format.js
       end
     end
     
