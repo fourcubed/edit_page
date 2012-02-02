@@ -1,4 +1,10 @@
-
+<script type="text/javascript">
+  $(function() {
+    $('textarea').tinymce({
+      theme: 'advanced'
+    });
+  });
+</script>
 
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id)) do |f| %>
   <p><%= f.label :title, 'Page Title' %><br />
@@ -9,9 +15,3 @@
 <% end %>
 
 <p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
-<script type="text/javascript">
-  tinyMCE.init({
-    mode: 'textareas',
-    theme: 'advanced'
-  });
-</script>
