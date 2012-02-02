@@ -16,7 +16,7 @@ module EditPage
         render :action => :edit
       end
       respond_to do |format|
-        format.html
+        format.html { render :layout => nil }
         format.js
       end
     end
@@ -24,7 +24,7 @@ module EditPage
     def edit
       @page = Page.find(params[:id])
       respond_to do |format|
-        format.html render :layout => nil
+        format.html { render :layout => nil }
         format.js
       end
     end
@@ -41,7 +41,7 @@ module EditPage
         render :action => :edit
       end
       respond_to do |format|
-        format.html
+        format.html { render :layout => nil }
         format.js
       end
     end
