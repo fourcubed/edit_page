@@ -6,6 +6,8 @@
   });
 </script>
 
+<%= javascript_include_tag 'edit_page/app' %>
+
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id)) do |f| %>
   <p><%= f.label :title, 'Page Title' %><br />
   <%= f.text_field :title %></p>
