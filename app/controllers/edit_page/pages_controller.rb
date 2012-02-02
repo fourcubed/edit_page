@@ -1,5 +1,7 @@
 module EditPage
   class PagesController < ApplicationController
+    layout nil
+    
     def index
       @pages = Page.where(:active => true)
     end
