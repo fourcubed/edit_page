@@ -1,11 +1,4 @@
 <%= javascript_include_tag 'edit_page/app' %>
-<script type="text/javascript">
-  $(function() {
-    $('textarea').tinymce({
-      theme: 'advanced'
-    });
-  });
-</script>
 
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id)) do |f| %>
   <p><%= f.label :title, 'Page Title' %><br />
@@ -14,5 +7,5 @@
   <%= f.text_area :content, :rows => 40, :cols => 80 %></p>
   <%= f.submit %>
 <% end %>
-
+<p><a href='javascript:setup();'>SETUP</a></p>
 <p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
