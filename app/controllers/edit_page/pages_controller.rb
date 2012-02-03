@@ -50,8 +50,7 @@ module EditPage
     
     def destroy
       @page = Page.find(params[:id])
-      @page.active = false
-      @page.save!
+      @page.destroy
       flash.now[:notice] = "Successfully deleted page."
       respond_to do |format|
         format.html { redirect_to pages_path }
