@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120201161857) do
   create_table "edit_page_pages", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.text     "slug"
     t.string   "file_name"
     t.boolean  "active",     :default => true
     t.datetime "created_at"
