@@ -4,4 +4,4 @@
 <% end %>
 
 <p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
-<p><a href='#'>Delete</a></p>
+<p><a href='#' id="edit_page/pages/<%= @page.id %>">Delete</a></p>
