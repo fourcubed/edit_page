@@ -13,7 +13,7 @@ module EditPage
     def create
       @page = Page.new(params[:page])
       if @page.save
-        redirect_to pages_path
+        flash[:success] = "Successfully created page."
       else
         render :action => :edit
       end
@@ -33,10 +33,8 @@ module EditPage
     
     def update
       @page = Page.find(params[:id])
-      Rails.logger.debug("\n\n\n@page = #{@page.inspect}\n\n\n")
       if @page.update_attributes(params[:page])
-        Rails.logger.debug("\n\n\nSUCCESS! @page = #{@page.inspect}\n\n\n")
-        redirect_to @page
+        flash[:success] = "Successfully updated page."
       else
         render :action => :edit
       end
@@ -46,7 +44,7 @@ module EditPage
       @page = Page.find(params[:id])
       @page.active = false
       @page.save!
-      redirect_to pages_path
+      flash[:success] = "Successfully deleted page."
     end
 
   end
