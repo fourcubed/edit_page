@@ -13,7 +13,7 @@ module EditPage
     def create
       @page = Page.new(params[:page])
       if @page.save
-        flash[:success] = "Successfully created page."
+        flash[:notice] = "Successfully created page."
         respond_to do |format|
           format.html { redirect_to pages_path }
           format.js
@@ -38,7 +38,7 @@ module EditPage
     def update
       @page = Page.find(params[:id])
       if @page.update_attributes(params[:page])
-        flash[:success] = "Successfully updated page."
+        flash[:notice] = "Successfully updated page."
         respond_to do |format|
           format.html { redirect_to @page }
           format.js
@@ -52,7 +52,7 @@ module EditPage
       @page = Page.find(params[:id])
       @page.active = false
       @page.save!
-      flash[:success] = "Successfully deleted page."
+      flash[:notice] = "Successfully deleted page."
       respond_to do |format|
         format.html { redirect_to pages_path }
         format.js
