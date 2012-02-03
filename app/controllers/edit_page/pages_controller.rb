@@ -33,7 +33,9 @@ module EditPage
     
     def update
       @page = Page.find(params[:id])
+      Rails.logger.debug("\n\n\n@page = #{@page.inspect}\n\n\n")
       if @page.update_attributes(params[:page])
+        Rails.logger.debug("\n\n\nSUCCESS! @page = #{@page.inspect}\n\n\n")
         redirect_to @page
       else
         render :action => :edit
