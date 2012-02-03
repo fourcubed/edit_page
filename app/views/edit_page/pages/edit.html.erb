@@ -1,4 +1,4 @@
-<p id="success"><%= notice %></p>
+<p id="flash"><%= notice %></p>
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id)) do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>
