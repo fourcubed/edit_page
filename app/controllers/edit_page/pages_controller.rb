@@ -15,11 +15,11 @@ module EditPage
       if @page.save
         flash[:success] = "Successfully created page."
         respond_to do |format|
-          format.html
+          format.html { redirect_to pages_path }
           format.js
         end
       else
-        render :action => :edit
+        render :action => :new
       end
     end
   
@@ -40,7 +40,7 @@ module EditPage
       if @page.update_attributes(params[:page])
         flash[:success] = "Successfully updated page."
         respond_to do |format|
-          format.html
+          format.html { redirect_to @page }
           format.js
         end
       else
@@ -54,7 +54,7 @@ module EditPage
       @page.save!
       flash[:success] = "Successfully deleted page."
       respond_to do |format|
-        format.html
+        format.html { redirect_to pages_path }
         format.js
       end
     end
