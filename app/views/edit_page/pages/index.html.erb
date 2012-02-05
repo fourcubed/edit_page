@@ -1,9 +1,7 @@
 <p><strong>Pages</strong></p>
-<p>
   <ul>
   <% @pages.each do |p| %>
     <p><%= link_to p.title, url_for(:controller => 'edit_page/pages', :action => 'show', :id => p.id) %></p>
   <% end %>
   </ul>
-</p>
 <p><%= link_to "New Page", url_for(:controller => 'edit_page/pages', :action => 'new') %></p>
