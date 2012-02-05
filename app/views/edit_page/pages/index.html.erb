@@ -2,7 +2,7 @@
 <p>
   <ul>
   <% @pages.each do |p| %>
-    <%= link_to p.title, url_for(:controller => 'edit_page/pages', :action => 'show', :id => p.id) %>
+    <%= link_to p.title, url_for(:controller => 'edit_page/pages', :action => 'show', :id => p.id) %><br />
   <% end %>
   </ul>
 </p>
