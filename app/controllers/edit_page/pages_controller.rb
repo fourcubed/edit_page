@@ -12,6 +12,7 @@ module EditPage
     
     def create
       @page = Page.new(params[:page])
+      @page.file_uploads.build(params[:file])
       if @page.save
         flash.now[:notice] = "Successfully created page."
         respond_to do |format|
@@ -19,6 +20,7 @@ module EditPage
           format.js
         end
       else
+        Rails.logger.debug("\n\n\nerrors = #{@page.errors.full_messages}\n\n\n")
         render :action => :new
       end
     end
