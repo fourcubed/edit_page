@@ -15,7 +15,7 @@ module EditPage
       if params[:file]
         @page.file_uploads.build(params[:file])
         upload = params[:file][:upload]
-        @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@post.file_uploads.last.upload_file_name.split(".").first}'>")
+        @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>")
       end
       if @page.save
         flash.now[:notice] = "Successfully created page."
