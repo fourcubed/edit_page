@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.1.3"
   # s.add_dependency "jquery-rails"
   s.add_dependency "tinymce-rails"
+  s.add_dependency "remotipart"
 
   s.add_development_dependency "mysql2"
 end

@@ -1,3 +1,4 @@
+require "remotipart"
 require "tinymce-rails"
 module EditPage
   class Engine < Rails::Engine

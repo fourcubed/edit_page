@@ -9,6 +9,7 @@ gemspec
 gem "jquery-rails"
 gem "mysql2"
 gem "tinymce-rails"
+gem "remotipart"
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.6'
