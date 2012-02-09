@@ -1,8 +1,19 @@
 <% @page.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
 <% end %>
-<p><%= f.label :title, 'Page Title' %><br />
-<%= f.text_field :title %></p>
-<p><%= f.label :content, 'Page Content' %><br />
-<%= f.text_area :content, :rows => 40, :cols => 80 %></p>
+<p>
+  <%= f.label :title, 'Page Title' %><br />
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :content, 'Page Content' %><br />
+  <%= f.text_area :content, :rows => 40, :cols => 80 %>
+</p>
+<%= fields_for :file do |attachment| %>
+  <p>
+    <%= attachment.label :upload, "Attachment" %><br />
+    <%= attachment.file_field :upload %>
+  </p>
+<% end %>
+
 <%= f.submit %>

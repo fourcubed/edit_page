@@ -1,5 +1,5 @@
 <p id="flash"><%= notice %></p>
-<%= form_for @page, :url => url_for(:controller => 'edit_page/pages', :action => 'create') do |f| %>
+<%= form_for @page, :url => url_for(:controller => 'edit_page/pages', :action => 'create'), :html => { :multipart => true } do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>
 
