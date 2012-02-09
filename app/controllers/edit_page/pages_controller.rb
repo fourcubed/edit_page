@@ -12,7 +12,11 @@ module EditPage
     
     def create
       @page = Page.new(params[:page])
-      @page.file_uploads.build(params[:file])
+      if params[:file]
+        @page.file_uploads.build(params[:file])
+        upload = params[:file][:upload]
+        @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@post.file_uploads.last.upload_file_name.split(".").first}'>")
+      end
       if @page.save
         flash.now[:notice] = "Successfully created page."
         respond_to do |format|
