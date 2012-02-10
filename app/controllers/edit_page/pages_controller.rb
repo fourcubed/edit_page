@@ -47,6 +47,7 @@ module EditPage
         @page.update_attributes(params[:page])
         @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>")
         success = @page.save
+        Rails.logger.debug("\n\n\n@page.content = #{@page.content}\n\n\n")
       else
         success = @page.update_attributes(params[:page])
       end
