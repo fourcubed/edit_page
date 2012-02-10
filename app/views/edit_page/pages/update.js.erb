@@ -1,4 +1,4 @@
-$('tabs-2-2').html('');
+$('#tabs-2-2').html('<%= escape_javascript(render :action => :edit) %>').show();
 $('#edit_page').trigger('click');
-$('div[id="tabs-2-1"] a:contains"<%= @page.title %>"').trigger('click');
+
 $('#flash').html('<%= escape_javascript(flash[:notice]) %>').show();
