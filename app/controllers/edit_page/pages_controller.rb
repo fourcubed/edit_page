@@ -17,7 +17,7 @@ module EditPage
         @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>")
       end
       if @page.save
-        flash.now[:notice] = "Successfully created page."
+        flash.now[:notice] = "Successfully created page!"
         respond_to do |format|
           format.html { redirect_to pages_path }
           format.js
@@ -45,10 +45,9 @@ module EditPage
       if params[:file]
         @page.file_uploads.build(params[:file])
         params[:page]['content'] = "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>" + params[:page]['content']
-        Rails.logger.debug("\n\n\nparams[page] = #{params[:page]}\n\n\n")
       end
       if @page.update_attributes!(params[:page])
-        flash.now[:notice] = "Successfully updated page."
+        flash.now[:notice] = "Successfully updated page!"
         respond_to do |format|
           format.html { redirect_to @page }
           format.js
