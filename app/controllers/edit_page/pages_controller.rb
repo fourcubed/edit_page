@@ -44,10 +44,13 @@ module EditPage
       @page = Page.find(params[:id])
       if params[:file]
         @page.file_uploads.build(params[:file])
+        @page.update_attributes(params[:page])
         @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>")
-        Rails.logger.debug("\n\n\n@page.content = #{@page.content}\n\n\n\n")
+        success = @page.save
+      else
+        success = @page.update_attributes(params[:page])
       end
-      if @page.update_attributes(params[:page])
+      if success == true
         flash.now[:notice] = "Successfully updated page."
         respond_to do |format|
           format.html { redirect_to @page }
