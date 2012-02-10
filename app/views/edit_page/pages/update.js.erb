@@ -1,4 +1,4 @@
-$('#flash').html('<%= escape_javascript(flash[:notice]) %>').show();
-$('tabs-2-2').html(data);
+$('tabs-2-2').html('');
 $('#edit_page').trigger('click');
-$('a:contains("cancel")').hide();
+$('div[id="tabs-2-1"] a:contains"<%= @page.title %>"').trigger('click');
+$('#flash').html('<%= escape_javascript(flash[:notice]) %>').show();
