@@ -46,9 +46,9 @@ module EditPage
         @page.file_uploads.build(params[:file])
         @page.content.insert(0, "<img src='#{@page.file_uploads.last.upload.url}' alt='#{@page.file_uploads.last.upload_file_name.split(".").first}'>")
         params.merge!( { :page => params[:page].merge!( "content" => @page.content ) } )
-        Rails.logger.debug("\n\n\nparams[page] = = #{params[:page]}\n\n\n")
+        Rails.logger.debug("\n\n\nparams[page] = #{params[:page]}\n\n\n")
       end
-      if @page.update_attributes(params[:page])
+      if @page.update_attributes!(params[:page])
         flash.now[:notice] = "Successfully updated page."
         respond_to do |format|
           format.html { redirect_to @page }
