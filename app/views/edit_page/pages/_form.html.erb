@@ -9,6 +9,10 @@
   <%= f.label :content, 'Page Content' %><br />
   <%= f.text_area :content, :rows => 40, :cols => 80 %>
 </p>
+<p>
+  <%= f.label :slug, "Relative URL" %><br />
+  <%= f.text_field :slug %>
+</p>
 <%= fields_for :file do |attachment| %>
   <p>
     <%= attachment.label :upload, "Attachment" %><br />
