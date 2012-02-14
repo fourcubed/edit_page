@@ -4,4 +4,4 @@
     <p><%= link_to p.title, url_for(:controller => 'edit_page/pages', :action => 'show', :id => p.id) %></p>
   <% end %>
   </ul>
-<p class='admin_new_page'><%= link_to "New Page", url_for(:controller => 'edit_page/pages', :action => 'new') %></p>
+<div id='admin_new_page'><%= link_to "New Page", url_for(:controller => 'edit_page/pages', :action => 'new') %></div>
