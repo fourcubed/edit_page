@@ -1,3 +1,10 @@
+<script type="text/javascript">
+	$(function () {
+		$("#page_title").watermark("Enter Page Title");
+		$("#page_slug").watermark("Relative URL");
+	});
+</script>
+
 <% @page.errors.full_messages.each do |msg| %>
   <p><%= msg %></p>
 <% end %>
