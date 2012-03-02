@@ -3,5 +3,4 @@
   <%= render :partial => 'form', :locals => { :f => f } %>
 <% end %>
 
-<p><%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %></p>
-<p><a href='#' id="edit_page/pages/<%= @page.id %>">Delete</a></p>
+<%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %>&nbsp;&nbsp;<%= link_to "Delete Page", url_for(:controller => 'edit_page/pages', :action => 'destroy', :id => @page.id), :method => :delete, :remote => true, :confirm => "Are you sure you want to delete this page? This will remove the page from your site." %>
