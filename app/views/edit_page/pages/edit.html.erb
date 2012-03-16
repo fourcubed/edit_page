@@ -1,7 +1,7 @@
 <p id="flash"><%= notice %></p>
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id), :html => { :multipart => true }, :remote => true) do |f| %>
   <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= f.submit %>
 <% end %>
 
 <%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %>&nbsp;&nbsp;<a href='#' id="edit_page/pages/<%= @page.id %>">Delete This Page</a>
-<%= f.submit %>
