@@ -1,4 +1,4 @@
-<p id="flash"><%= notice %></p>
+<p id="ep_flash"><%= notice %></p>
 <%= form_for @page, :url => url_for(:controller => 'edit_page/pages', :action => 'create'), :html => { :multipart => true }, :remote => true do |f| %>
   <%= render :partial => 'form', :locals => { :f => f, :@page => @page } %>
   <%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'index') %>&nbsp;&nbsp;<%= f.submit %>
