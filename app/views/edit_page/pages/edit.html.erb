@@ -1,6 +1,5 @@
 <p id="flash"><%= notice %></p>
 <%= form_for(@page, :url => url_for(:controller => 'edit_page/pages', :action => 'update', :id => @page.id), :html => { :multipart => true }, :remote => true) do |f| %>
-  <%= error_messages_for @page %>
   <%= render :partial => 'form', :locals => { :f => f } %>
   <%= f.submit %>
 <% end %>
