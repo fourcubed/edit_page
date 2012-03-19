@@ -3,7 +3,7 @@ class CopyEditablePages < ActiveRecord::Migration
     begin
       # copy pages in Rails.root/lib/edit_page/pages
       Dir.glob(Rails.root.join("lib/edit_page/pages/*.{html,css,js,txt,erb}")).each do |file|
-        page = EditPage::Page.new(:title => file.split('/').last.split('.').first.titleize, :content => File.read(file), :file_name => file.split('/').last, :slug => file.split('/').last.split('.').first)
+        page = EditPage::Page.new(:title => file.split('/').last.split('.').first.titleize, :content => File.read(file), :file_name => file.split('/').last, :relative_url => file.split('/').last.split('.').first)
         page.save!
       end
     rescue
