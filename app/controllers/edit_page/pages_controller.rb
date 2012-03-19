@@ -27,10 +27,9 @@ module EditPage
         Rails.logger.debug("\n\n\n@errors = #{@errors}\n\n\n")
         Rails.logger.debug("\n\n\nerrors = #{@page.errors.full_messages}\n\n\n")
         respond_to do |format|
-          format.html
-          format.js
+          format.html { render :action => :new }
+          format.js { render :action => :new }
         end
-        render :action => :new
       end
     end
   
