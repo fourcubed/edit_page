@@ -23,6 +23,8 @@ module EditPage
           format.js
         end
       else
+        @errors = format_errors
+        Rails.logger.debug("\n\n\n@errors = #{@errors}\n\n\n")
         Rails.logger.debug("\n\n\nerrors = #{@page.errors.full_messages}\n\n\n")
         render :action => :new
       end
@@ -65,6 +67,14 @@ module EditPage
         format.html { redirect_to pages_path }
         format.js
       end
+    end
+    
+    def format_errors
+      string = "<ul>"
+      @page.errors.full_messages.each do |error|
+        string << "<li>#{error}</li>"
+      end
+      string << "</ul>"
     end
 
   end
