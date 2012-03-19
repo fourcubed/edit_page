@@ -1,1 +1,1 @@
-$('#ep_flash').html('<%= j(@errors) %>').show();
+$('#ep_flash').html('<%= j(@errors.html_safe) %>').show();
