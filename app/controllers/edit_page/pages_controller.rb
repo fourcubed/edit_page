@@ -58,7 +58,11 @@ module EditPage
           format.js
         end
       else
-        render :action => :edit
+        @errors = format_errors
+        respond_to do |format|
+          format.html { render :action => :edit }
+          format.js { render 'edit_page/pages/failure' }
+        end
       end
     end
     
