@@ -24,8 +24,6 @@ module EditPage
         end
       else
         @errors = format_errors
-        Rails.logger.debug("\n\n\n@errors = #{@errors}\n\n\n")
-        Rails.logger.debug("\n\n\nerrors = #{@page.errors.full_messages}\n\n\n")
         respond_to do |format|
           format.html { render :action => :new }
           format.js { render 'edit_page/pages/failure' }
