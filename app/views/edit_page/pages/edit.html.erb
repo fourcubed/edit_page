@@ -5,3 +5,4 @@
 <% end %>
 
 <%= link_to "cancel", url_for(:contoller => 'edit_page/pages', :action => 'show', :id => @page.id) %>&nbsp;&nbsp;<a href='#' id="edit_page/pages/<%= @page.id %>">Delete This Page</a>
+<script>$('#page_relative_url').change();</script>
