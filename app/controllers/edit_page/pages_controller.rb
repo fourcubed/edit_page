@@ -1,6 +1,5 @@
 module EditPage
   class PagesController < ApplicationController
-    layout nil
     
     def index
       @pages = Page.where(:active => true)
@@ -18,25 +17,14 @@ module EditPage
       end
       if @page.save
         flash.now[:notice] = "Successfully created page!"
-        respond_to do |format|
-          format.html { redirect_to pages_path }
-          format.js
-        end
+        redirect_to pages_path
       else
-        @errors = format_errors
-        respond_to do |format|
-          format.html { render :action => :new }
-          format.js { render 'edit_page/pages/failure' }
-        end
+        render :action => :new
       end
     end
   
     def edit
       @page = Page.find(params[:id])
-      respond_to do |format|
-        format.html
-        format.js
-      end
     end
     
     def show
@@ -51,16 +39,9 @@ module EditPage
       end
       if @page.update_attributes(params[:page])
         flash.now[:notice] = "Successfully updated page!"
-        respond_to do |format|
-          format.html { redirect_to @page }
-          format.js
-        end
+        redirect_to @page
       else
-        @errors = format_errors
-        respond_to do |format|
-          format.html { render :action => :edit }
-          format.js { render 'edit_page/pages/failure' }
-        end
+        render :action => :edit
       end
     end
     
@@ -68,19 +49,7 @@ module EditPage
       @page = Page.find(params[:id])
       @page.destroy
       flash.now[:notice] = "Successfully deleted page."
-      respond_to do |format|
-        format.html { redirect_to pages_path }
-        format.js
-      end
+      redirect_to pages_path
     end
-    
-    def format_errors
-      string = "<ul>"
-      @page.errors.full_messages.each do |error|
-        string << "<li>#{error}</li>"
-      end
-      string << "</ul>"
-    end
-
   end
 end
