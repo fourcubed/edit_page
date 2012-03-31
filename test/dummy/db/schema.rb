@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201161857) do
+ActiveRecord::Schema.define(:version => 20120331192546) do
+
+  create_table "edit_page_file_uploads", :force => true do |t|
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.string   "file_type"
+    t.integer  "file_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "edit_page_pages", :force => true do |t|
     t.string   "title"
