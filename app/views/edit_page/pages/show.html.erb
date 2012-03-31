@@ -2,6 +2,8 @@
 
 <p><%= @page.content.html_safe %></p><br />
 
-<p><%= link_to "Edit This Page", url_for(:controller => 'edit_page/pages', :action => 'edit', :id => @page.id) %></p>
-<p><%= link_to "Delete Page", url_for(:controller => 'edit_page/pages', :action => 'destroy', :id => @page.id), :method => :delete, :remote => true, :confirm => "Are you sure you want to delete this page? This will remove the page from your site." %></p>
-<p><%= link_to "back to pages", url_for(:controller => 'edit_page/pages', :action => 'index') %></p>
+<p>
+	<%= link_to "All Pages", url_for(:controller => 'edit_page/pages', :action => 'index') %>
+	<%= link_to "Edit This Page", url_for(:controller => 'edit_page/pages', :action => 'edit', :id => @page.id) %>
+	<%= button_to "Delete This Page", url_for(:controller => 'edit_page/pages', :action => 'destroy', :id => @page.id), :method => :delete, :confirm => "Are you sure you want to delete this page? This will remove the page from your site." %>
+</p>
