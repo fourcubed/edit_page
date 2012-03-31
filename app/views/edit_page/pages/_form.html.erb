@@ -1,22 +1,15 @@
-<script type="text/javascript">
-	$(function () {
-		$("#page_title").watermark("Enter Page Title (required)");
-		$("#page_relative_url").watermark("Enter Relative URL (required)");
-	});
-</script>
-
-<% @page.errors.full_messages.each do |msg| %>
-  <p><%= msg %></p>
-<% end %>
+<%= render "edit_page/shared/error_messages", :object => @page %>
 <p>
+	<%= f.label :title %><br />
   <%= f.text_field :title %>
 </p>
 <p>
-  <%= f.label :content, 'Page Content' %><br />
+  <%= f.label :content %><br />
   <%= f.text_area :content, :rows => 40, :cols => 80 %>
 </p>
 <p>
-  <%= f.text_field :relative_url %><span class="search_help" id="testtip"><a href="#relative_url_help"><img style="padding-right:36px; padding-top:6px" src="/images/tips.png" border="0" /></a></span>
+	<%= f.label :relative_url, "Relative URL"%><br />
+  <%= f.text_field :relative_url %>
 </p>
 <%= fields_for :file do |attachment| %>
   <p>
@@ -24,7 +17,3 @@
     <%= attachment.file_field :upload %>
   </p>
 <% end %>
-
-<script>
-$('#testtip a').trigger('change');
-</script>
