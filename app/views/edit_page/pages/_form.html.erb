@@ -20,8 +20,8 @@
 </p>
 <%= fields_for :file do |attachment| %>
   <p>
-    <%= attachment.label :upload, "Attachment" %><br />
-    <%= attachment.file_field :upload %>
+    <%= attachment.label :upload, "Image Attachment (JPG, PNG, GIF)" %><br />
+    <%= attachment.file_field :upload %><span class="search_help" id="testtip"><a href="#popup_help_image"><img style="padding-right:36px; padding-top:6px" src="/images/tips.png" border="0" /></a></span>
   </p>
 <% end %>
 
