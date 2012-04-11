@@ -55,9 +55,9 @@ module EditPage
         @page.file_uploads.build(params[:file])
         upload = @page.file_uploads.last
         file_type = upload.upload_content_type.split('/').first
-        params[:news_post]['content'] = case file_type
-          when "image"; "<img src='#{upload.last.upload.url}' alt='#{upload.last.upload_file_name.split(".").first}'>" + params[:news_post]['content']
-          else "<a href='#{upload.upload.url}'>#{upload.upload_file_name}</a>" + params[:news_post]['content']
+        params[:page]['content'] = case file_type
+          when "image"; "<img src='#{upload.last.upload.url}' alt='#{upload.last.upload_file_name.split(".").first}'>" + params[:page]['content']
+          else "<a href='#{upload.upload.url}'>#{upload.upload_file_name}</a>" + params[:page]['content']
         end['content']
       end
       if @page.update_attributes(params[:page])
